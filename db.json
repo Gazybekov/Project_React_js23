@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "title": "Mayze Classic Women's Sneakers",
+      "description": "Elevate your street style with the PUMA Mayze Classic Wns platform sneakers. These classic sneakers are designed to make a statement",
+      "price": 90,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/384209/01/sv01/fnd/PNA/fmt/png/Mayze-Classic-Women's-Sneakers",
+      "id": 1
+    },
+    {
+      "title": "Super Team Suede Sneakers",
+      "description": "The Super Team sneakers first hit the scene in 1982: Fast forward to the 2020s and we're bringing it back.",
+      "price": 100,
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_450,h_450/global/397514/01/sv01/fnd/PNA/fmt/png/Super-Team-Suede-Sneakers",
+      "id": 2
+    },
+    {
+      "title": "Обувь",
+      "category": "Мужская обувь",
+      "description": "",
+      "price": 2500,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3U3zSp6yDWCvx63r6WpoWiQ0my1Ngq8nzxGC0NVqhTA&s",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "name": "Мужская обувь",
+      "id": 1
+    },
+    {
+      "name": "Женская обувь",
+      "id": 2
+    },
+    {
+      "name": "худи",
+      "id": 3
+    }
+  ]
+}

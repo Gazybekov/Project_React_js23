@@ -8,6 +8,7 @@ import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
 import AddCategory from "../components/products/AddCategory";
 import Cart from "../components/cart/Cart";
+import AuthPage from "../pages/AuthPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -19,6 +20,7 @@ const MainRoutes = () => {
     { id: 6, link: "/contact", element: <ContactPage /> },
     { id: 7, link: "/addCategory", element: <AddCategory /> },
     { id: 8, link: "/cart", element: <Cart /> },
+    { id: 9, link: "/auth", element: <AuthPage /> },
   ];
 
   return (

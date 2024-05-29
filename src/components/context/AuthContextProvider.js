@@ -41,6 +41,8 @@ const AuthContextProvider = ({ children }) => {
             break;
         }
       });
+    cleareInputs();
+    clearsErrors();
   };
   //! LOGIN
   const handleLogin = () => {
@@ -62,6 +64,8 @@ const AuthContextProvider = ({ children }) => {
             break;
         }
       });
+    cleareInputs();
+    clearsErrors();
   };
   //! LOGOUT
   const handleLogOut = () => {

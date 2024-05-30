@@ -1,8 +1,8 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Modal, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useProducts } from "../context/ProductContextProvider";
 
-const AddCategory = () => {
+const AddCategory = ({ open, handleClose }) => {
   const style = {
     position: "absolute",
     top: "30%",
@@ -29,16 +29,22 @@ const AddCategory = () => {
     setCategory("");
   };
   return (
-    <Box sx={style}>
-      <Typography id="modal-modal-title">Добавить новую категорию</Typography>
-      <TextField
-        fullWidth
-        variant="outlined"
-        onChange={(e) => setCategory(e.target.value)}
-        value={category}
-      />
-      <Button onClick={handleClick}>Добавить</Button>
-    </Box>
+    <div>
+      <Modal open={open} onClose={handleClose}>
+        <Box sx={style}>
+          <Typography id="modal-modal-title">
+            Добавить новую категорию
+          </Typography>
+          <TextField
+            fullWidth
+            variant="outlined"
+            onChange={(e) => setCategory(e.target.value)}
+            value={category}
+          />
+          <Button onClick={handleClick}>Добавить</Button>
+        </Box>
+      </Modal>
+    </div>
   );
 };
 

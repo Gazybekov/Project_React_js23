@@ -15,6 +15,8 @@ import { useNavigate } from "react-router-dom";
 import { AddShoppingCart } from "@mui/icons-material";
 import { useCart } from "../context/CartContextProvider";
 import Detail from "./Detail";
+import { useAuth } from "../context/AuthContextProvider";
+import { ADMIN } from "../../helpers/const";
 
 const ProductCard = ({ elem }) => {
   const navigate = useNavigate();
@@ -23,6 +25,7 @@ const ProductCard = ({ elem }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleCLose = () => setOpen(false);
+  const { user } = useAuth();
   return (
     <Card
       sx={{
@@ -48,32 +51,38 @@ const ProductCard = ({ elem }) => {
         <Typography color="gray" fontSize="24px" fontWeight={700}>
           {elem.description}
         </Typography>
-        <Button
-          onClick={() => deleteProduct(elem.id)}
-          color="secondary"
-          variant="outlined"
-          size="medium"
-        >
-          Delete
-        </Button>
 
-        <Button
-          onClick={() => navigate(`/edit/${elem.id}`)}
-          color="primary"
-          variant="outlined"
-          size="medium"
-        >
-          Edit
-        </Button>
-        <IconButton
-          sx={{
-            backgroundColor: checkProductInCart(elem.id) ? "black" : "",
-            color: checkProductInCart(elem.id) ? "white" : "",
-          }}
-          onClick={() => addProductToCart(elem)}
-        >
-          <AddShoppingCart />
-        </IconButton>
+        {user.email === ADMIN ? (
+          <>
+            <Button
+              onClick={() => deleteProduct(elem.id)}
+              color="secondary"
+              variant="outlined"
+              size="medium"
+            >
+              Delete
+            </Button>
+
+            <Button
+              onClick={() => navigate(`/edit/${elem.id}`)}
+              color="primary"
+              variant="outlined"
+              size="medium"
+            >
+              Edit
+            </Button>
+          </>
+        ) : (
+          <IconButton
+            sx={{
+              backgroundColor: checkProductInCart(elem.id) ? "black" : "",
+              color: checkProductInCart(elem.id) ? "white" : "",
+            }}
+            onClick={() => addProductToCart(elem)}
+          >
+            <AddShoppingCart />
+          </IconButton>
+        )}
       </CardContent>
       <Detail open={open} handleCLose={handleCLose} elem={elem} />
     </Card>

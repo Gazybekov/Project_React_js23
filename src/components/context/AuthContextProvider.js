@@ -101,6 +101,7 @@ const AuthContextProvider = ({ children }) => {
     cleareInputs,
     hasAccount,
     setHasAccount,
+    authListener,
   };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
